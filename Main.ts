@@ -5,14 +5,7 @@ import {InjectCore} from 'modloader64_api/CoreInjection';
 let triforce: number = 0;
 let newTriforce: number;
 
-const saveContext: number = 0x8011A5D0;
-
-const sceneFlagsStart: number = saveContext + 0xD4;
-const sceneFlagsSize: number = 28;
-
-const curTriforceScene: number = 0x48; //72
-const curTriforceOffset: number = 18;
-const curTriforceAddr: number = sceneFlagsStart + (sceneFlagsSize * curTriforceScene) + curTriforceOffset;
+const curTriforceAddr: number = 0x8011ae96;
 
 class Main implements IPlugin{
 
