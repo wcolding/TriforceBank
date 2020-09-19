@@ -2,17 +2,17 @@ import {IPlugin, IModLoaderAPI} from 'modloader64_api/IModLoaderAPI';
 import {IOOTCore} from 'modloader64_api/OOT/OOTAPI';
 import {InjectCore} from 'modloader64_api/CoreInjection';
 
-var triforce = 0;
-var newTriforce;
+let triforce: number = 0;
+let newTriforce: number;
 
-var saveContext = 0x8011A5D0;
+const saveContext: number = 0x8011A5D0;
 
-var sceneFlagsStart = saveContext + 0xD4;
-var sceneFlagsSize = 28;
+const sceneFlagsStart: number = saveContext + 0xD4;
+const sceneFlagsSize: number = 28;
 
-var curTriforceScene = 0x48; //72
-var curTriforceOffset = 18;
-var curTriforceAddr = sceneFlagsStart + (sceneFlagsSize * curTriforceScene) + curTriforceOffset;
+const curTriforceScene: number = 0x48; //72
+const curTriforceOffset: number = 18;
+const curTriforceAddr: number = sceneFlagsStart + (sceneFlagsSize * curTriforceScene) + curTriforceOffset;
 
 class Main implements IPlugin{
 
